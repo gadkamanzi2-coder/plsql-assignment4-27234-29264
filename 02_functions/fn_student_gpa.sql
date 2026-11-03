@@ -1,6 +1,4 @@
--- Credit-weighted GPA on a 4.0 scale (A=4, B=3, C=2, D=1, F=0).
--- Returns NULL when the student has no graded courses yet
--- (0 would be misleading). Unknown student -> error -20021.
+
 CREATE OR REPLACE FUNCTION fn_student_gpa (
   p_student_id IN students.student_id%TYPE
 ) RETURN NUMBER
