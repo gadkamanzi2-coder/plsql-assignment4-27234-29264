@@ -1,5 +1,4 @@
--- Average score of a course in a semester. NULL if nobody is graded yet.
--- Unknown course -> error -20022.
+
 CREATE OR REPLACE FUNCTION fn_course_average (
   p_course_id IN courses.course_id%TYPE,
   p_semester  IN enrollments.semester%TYPE
