@@ -1,15 +1,12 @@
--- Uses all three collection kinds:
---   nested table  (BULK COLLECT target),
---   associative array indexed by VARCHAR2 (letter -> count),
---   VARRAY (the fixed list of possible letters).
+
 CREATE OR REPLACE PROCEDURE grade_distribution (
   p_course_id IN courses.course_id%TYPE,
   p_semester  IN enrollments.semester%TYPE
 )
 IS
-  TYPE t_letter_list IS TABLE OF grades.letter_grade%TYPE;           -- nested table
-  TYPE t_count_map   IS TABLE OF PLS_INTEGER INDEX BY VARCHAR2(2);   -- associative array
-  TYPE t_letter_va   IS VARRAY(5) OF VARCHAR2(2);                    -- VARRAY
+  TYPE t_letter_list IS TABLE OF grades.letter_grade%TYPE;           
+  TYPE t_count_map   IS TABLE OF PLS_INTEGER INDEX BY VARCHAR2(2);   
+  TYPE t_letter_va   IS VARRAY(5) OF VARCHAR2(2);                    
 
   v_letters     t_letter_list;
   v_counts      t_count_map;
