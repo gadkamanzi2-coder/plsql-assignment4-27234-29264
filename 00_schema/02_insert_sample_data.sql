@@ -1,7 +1,4 @@
--- =====================================================================
--- File   : 00_schema/02_insert_sample_data.sql
--- Run AFTER 01_create_tables.sql
--- =====================================================================
+
 SET SERVEROUTPUT ON
 
 -- Departments
@@ -31,7 +28,7 @@ INSERT INTO courses VALUES (104,'MATH2101','Discrete Mathematics',4,30);
 INSERT INTO courses VALUES (105,'INSY8314','Computer Networks',3,10);
 INSERT INTO courses VALUES (106,'BUSI3101','E-Business',2,20);
 
--- Enrollments (24), semester 2026-FALL
+-- Enrollments (24)
 INSERT INTO enrollments VALUES (1 ,1001,101,'2026-FALL',DATE '2026-09-05');
 INSERT INTO enrollments VALUES (2 ,1001,102,'2026-FALL',DATE '2026-09-05');
 INSERT INTO enrollments VALUES (3 ,1001,104,'2026-FALL',DATE '2026-09-05');
@@ -57,8 +54,6 @@ INSERT INTO enrollments VALUES (22,1010,101,'2026-FALL',DATE '2026-09-09');
 INSERT INTO enrollments VALUES (23,1011,104,'2026-FALL',DATE '2026-09-10');
 INSERT INTO enrollments VALUES (24,1012,101,'2026-FALL',DATE '2026-09-10');
 
--- Grades for enrollments 1-16 (17-24 are intentionally ungraded,
--- so the bulk grading procedures have work to do)
 INSERT INTO grades VALUES (1 , 1, 85,'A',DATE '2026-12-10');
 INSERT INTO grades VALUES (2 , 2, 72,'B',DATE '2026-12-10');
 INSERT INTO grades VALUES (3 , 3, 64,'C',DATE '2026-12-10');
