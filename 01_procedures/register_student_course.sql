@@ -1,5 +1,4 @@
--- Registers a student in a course. Uses %ROWTYPE records, an implicit
--- cursor (SQL%ROWCOUNT), predefined, user-defined and application errors.
+
 CREATE OR REPLACE PROCEDURE register_student_course (
   p_student_id    IN  students.student_id%TYPE,
   p_course_id     IN  courses.course_id%TYPE,
@@ -53,6 +52,6 @@ EXCEPTION
       p_course_id || ' for ' || p_semester || '.');
   WHEN OTHERS THEN
     ROLLBACK;
-    RAISE;   -- never hide unexpected errors
+    RAISE;   
 END register_student_course;
 /
