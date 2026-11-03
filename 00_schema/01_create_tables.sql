@@ -1,13 +1,5 @@
--- =====================================================================
--- Group Assignment IV - Student Registration and Grading System
--- File   : 00_schema/01_create_tables.sql
--- Authors: Kamanzi Gad (27234), Ntwazangabo Fabrice (29264)
--- Run in : SQL Developer, as a normal user, press F5 (Run Script)
--- Safe to re-run: it drops old objects first.
--- =====================================================================
-SET SERVEROUTPUT ON
 
--- ---------- 1. Clean up (ignore errors if objects do not exist) ------
+SET SERVEROUTPUT ON
 BEGIN
   FOR t IN (SELECT table_name FROM user_tables
             WHERE table_name IN ('GRADES','ENROLLMENTS','COURSES',
@@ -22,7 +14,7 @@ BEGIN
 END;
 /
 
--- ---------- 2. Tables ------------------------------------------------
+2.TABLES
 CREATE TABLE departments (
   dept_id    NUMBER(3)     CONSTRAINT pk_departments PRIMARY KEY,
   dept_name  VARCHAR2(60)  NOT NULL
@@ -83,7 +75,6 @@ CREATE TABLE grades (
   graded_date    DATE        DEFAULT SYSDATE NOT NULL
 );
 
--- Used by procedures to record bulk (FORALL) errors
 CREATE TABLE error_log (
   log_id      NUMBER(8)      CONSTRAINT pk_error_log PRIMARY KEY,
   proc_name   VARCHAR2(60),
@@ -92,13 +83,12 @@ CREATE TABLE error_log (
   logged_at   DATE DEFAULT SYSDATE
 );
 
--- ---------- 3. Sequences (start above the sample data ids) -----------
 CREATE SEQUENCE seq_student    START WITH 1013 INCREMENT BY 1 NOCACHE;
 CREATE SEQUENCE seq_enrollment START WITH 25   INCREMENT BY 1 NOCACHE;
 CREATE SEQUENCE seq_grade      START WITH 17   INCREMENT BY 1 NOCACHE;
 CREATE SEQUENCE seq_error_log  START WITH 1    INCREMENT BY 1 NOCACHE;
 
--- ---------- 4. Index on a frequently searched foreign key ------------
+
 CREATE INDEX idx_enr_student ON enrollments(student_id);
 CREATE INDEX idx_enr_course  ON enrollments(course_id);
 
