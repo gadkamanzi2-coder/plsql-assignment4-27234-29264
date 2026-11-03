@@ -1,5 +1,4 @@
--- Changes a student's status. Shows SQL%ROWCOUNT, SQL%FOUND, SQL%NOTFOUND
--- for an UPDATE, and handles a CHECK-constraint violation (ORA-02290).
+
 CREATE OR REPLACE PROCEDURE update_student_status (
   p_student_id   IN  students.student_id%TYPE,
   p_new_status   IN  students.status%TYPE,
