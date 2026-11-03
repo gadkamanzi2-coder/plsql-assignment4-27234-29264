@@ -1,5 +1,4 @@
--- Explicit cursor with a parameter: OPEN / FETCH / CLOSE.
--- Uses a user-defined record type and a %ROWTYPE record.
+
 CREATE OR REPLACE PROCEDURE print_course_roster (
   p_course_id IN courses.course_id%TYPE,
   p_semester  IN enrollments.semester%TYPE
@@ -7,7 +6,7 @@ CREATE OR REPLACE PROCEDURE print_course_roster (
 IS
   v_course courses%ROWTYPE;
 
-  TYPE t_roster_rec IS RECORD (          -- user-defined record
+  TYPE t_roster_rec IS RECORD (          
     student_id   students.student_id%TYPE,
     full_name    VARCHAR2(90),
     score        grades.score%TYPE,
