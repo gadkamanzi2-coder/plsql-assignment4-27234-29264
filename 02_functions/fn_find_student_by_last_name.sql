@@ -1,5 +1,4 @@
--- Returns the student_id for a last name.
--- Demonstrates NO_DATA_FOUND and TOO_MANY_ROWS.
+
 CREATE OR REPLACE FUNCTION fn_find_student_by_last_name (
   p_last_name IN students.last_name%TYPE
 ) RETURN NUMBER
