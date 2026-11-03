@@ -1,5 +1,4 @@
--- Deletes an enrollment and its grade (if any). Shows implicit cursor
--- attributes for DELETE.
+
 CREATE OR REPLACE PROCEDURE delete_enrollment (
   p_enrollment_id IN  enrollments.enrollment_id%TYPE,
   p_grades_deleted OUT NUMBER
