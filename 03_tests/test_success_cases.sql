@@ -1,11 +1,7 @@
--- =====================================================================
--- File: 03_tests/test_success_cases.sql
--- Successful executions. Run AFTER schema + all procedures/functions.
--- Safe to re-run: it restores the data it changes.
--- =====================================================================
+
 SET SERVEROUTPUT ON SIZE UNLIMITED
 
--- ---------- Housekeeping: remove leftovers from earlier runs ----------
+
 DELETE FROM grades      WHERE grade_id > 16;
 DELETE FROM enrollments WHERE student_id = 1008 AND course_id = 102;
 DELETE FROM error_log;
