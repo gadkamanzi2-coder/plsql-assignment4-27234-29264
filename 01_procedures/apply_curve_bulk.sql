@@ -1,5 +1,4 @@
--- BULK COLLECT into associative arrays, then FORALL UPDATE.
--- Adds p_points to every score of a course (capped to 0..100).
+
 CREATE OR REPLACE PROCEDURE apply_curve_bulk (
   p_course_id IN  courses.course_id%TYPE,
   p_semester  IN  enrollments.semester%TYPE,
