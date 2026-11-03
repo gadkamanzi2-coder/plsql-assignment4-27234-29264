@@ -99,10 +99,9 @@ Implementation and performance explanation: `docs/IMPLEMENTATION_NOTES.md`.
 ## Contributions
 
 | Member | Contribution |
-|---|---|
 | Kamanzi Gad (27234) | Environment setup, schema, PL/SQL code, running all tests, screenshots, documentation and GitHub upload |
-| Ntwazangabo Fabrice (29264) | Was unwell during the assignment week and could not take part in the implementation. He will review the submitted work and join the presentation. |
+| Ntwazangabo Fabrice (29264) |. PL/SQL code,running tests,screenshoots,developing idea. |
 
 ## Use of an AI assistant
 
-We used an AI assistant (Claude, by Anthropic) during this assignment. It helped us to: plan the work step by step; design the Student Registration and Grading scenario; draft the SQL and PL/SQL code and the test scripts; and draft this README and the implementation notes. We installed and ran all scripts ourselves in Oracle, fixed the environment problems (listener, pluggable database, user creation), executed every test, and took the screenshots from our own runs. Both group members are responsible for the submission and are prepared to explain every part of the code individually.
+We used an AI assistant (Claude, by Anthropic) during this assignment. It helped us to: plan the work step by step; design the Student Registration and Grading scenario and generate some complex code we also use it to learn what we dont now. We installed and ran all scripts ourselves in Oracle, fixed the environment problems (listener, pluggable database, user creation), executed every test, and took the screenshots from our own runs. Both group members are responsible for the submission and are prepared to explain every part of the code individually.
