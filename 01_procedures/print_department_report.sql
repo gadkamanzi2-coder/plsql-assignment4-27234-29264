@@ -1,5 +1,4 @@
--- Explicit cursor used in a cursor FOR loop, plus a record declared with
--- cursor%ROWTYPE to remember the best department.
+
 CREATE OR REPLACE PROCEDURE print_department_report
 IS
   CURSOR c_dept IS
