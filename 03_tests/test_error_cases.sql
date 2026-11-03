@@ -1,7 +1,4 @@
--- =====================================================================
--- File: 03_tests/test_error_cases.sql
--- Error handling. Each block must print PASS (the expected error was raised).
--- =====================================================================
+
 SET SERVEROUTPUT ON SIZE UNLIMITED
 
 DELETE FROM grades WHERE grade_id > 16;
@@ -230,8 +227,7 @@ EXCEPTION WHEN OTHERS THEN
 END;
 /
 
-PROMPT -- FORALL SAVE EXCEPTIONS: 1 good row, 3 bad rows
-PROMPT -- (duplicate grade, missing enrollment, score above 100)
+
 DECLARE
   v_ids  t_number_list := t_number_list(17, 1, 99999, 18);
   v_sc   t_number_list := t_number_list(66, 70, 80, 150);
