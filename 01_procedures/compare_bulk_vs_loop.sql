@@ -1,5 +1,4 @@
--- Performance demo: row-by-row INSERT in a loop versus one FORALL.
--- Both are rolled back, so PERF_TEST stays empty.
+
 CREATE OR REPLACE PROCEDURE compare_bulk_vs_loop (
   p_rows IN PLS_INTEGER DEFAULT 20000
 )
@@ -21,7 +20,7 @@ BEGIN
   DELETE FROM perf_test;
   COMMIT;
 
-  -- 1) Row by row: one SQL call per row (many PL/SQL <-> SQL context switches)
+
   v_start := DBMS_UTILITY.GET_TIME;
   FOR i IN 1 .. p_rows LOOP
     INSERT INTO perf_test (id, val) VALUES (i, 'Row ' || i);
@@ -29,7 +28,7 @@ BEGIN
   v_loop_cs := DBMS_UTILITY.GET_TIME - v_start;
   ROLLBACK;
 
-  -- 2) Bulk: fill arrays, then ONE FORALL call
+
   FOR i IN 1 .. p_rows LOOP
     v_ids(i)  := i;
     v_vals(i) := 'Row ' || i;
