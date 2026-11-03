@@ -1,5 +1,4 @@
--- Converts a numeric score (0-100) into a letter grade.
--- Invalid scores raise an error instead of returning a misleading value.
+
 CREATE OR REPLACE FUNCTION fn_letter_grade (
   p_score IN NUMBER
 ) RETURN VARCHAR2
